@@ -46,7 +46,7 @@ const calendarEvents = {
         recommender: "Toni suosittelee",
         tip: "Huvipuisto auki kesällä! Ota vauhdikkaat kyydit ja vieraile näköalatornissa. Perheelle myös Lastenleffa!",
         mapUrl: "https://www.google.com/maps/search/Linnanmäki+Helsinki",
-        image: "img/linnanmaki.jpg",
+        image: "img/linnanmäki.jpg",
         family: true,
         tiko: false
     },
@@ -76,7 +76,7 @@ const calendarEvents = {
         recommender: "",
         tip: "Uimahalli merivedellä keskustassa! Lämmin allas + merivesialtaat. Auki kesälläkin.",
         mapUrl: "https://www.google.com/maps/search/Allas+Sea+Pool+Helsinki",
-        image: "img/Allasseapool.jpg",
+        image: "img/allasseapool.jpg",
         family: true,
         tiko: false
     },
@@ -86,7 +86,7 @@ const calendarEvents = {
         recommender: "",
         tip: "Kaunis kävelyreitti saaressa! Luonto ja rauha keskellä kaupunkia.",
         mapUrl: "https://www.google.com/maps/search/Kuninkaansaari+Helsinki",
-        image: "img/VallisaariKuninkaansaari.JPG",
+        image: "img/vallisaarikuninkaansaari.jpg",
         family: true,
         tiko: false
     },
@@ -106,7 +106,7 @@ const calendarEvents = {
         recommender: "",
         tip: "Suomen suurin eläintarha! Täällä on kaikki leijonista apinoihin. Erinomainen perhepäivä!",
         mapUrl: "https://www.google.com/maps/search/Korkeasaari+Helsinki",
-        image: "img/Korkeasaari.jpg",
+        image: "img/korkeasaari.jpg",
         family: true,
         tiko: false
     },
@@ -212,6 +212,11 @@ function createDoor(weekData) {
 function handleDoorClick(el) {
     const week = el.dataset.week;
     const event = calendarEvents[week];
+
+    // Tarkista onko ovi lukittu
+    if (el.classList.contains('locked')) {
+        return;
+    }
 
     if (!event || !event.title) {
         alert("Ei vielä sisältöä tälle viikolle!");
