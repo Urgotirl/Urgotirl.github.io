@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="fi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kesäkalenteri 2026</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Kesäkalenteri 2026</h1>
+            <p class="info">13 viikkoa menovinkkejä TIKO-porukalle</p>
+        </div>
+
+        <div class="legend">
+            <span class="family">🌳 Perheille</span>
+            <span class="tiko">🎓 TIKO-tapahtuma</span>
+        </div>
+
+        <div class="calendar" id="calendar"></div>
+
+        <footer>
+            <span class="handmade">Tekijä Toni</span>
+        </footer>
+    </div>
+
+    <!-- MODAALI -->
+    <div class="modal-overlay" id="modalOverlay" onclick="closeModal(event)">
+        <div class="modal" onclick="event.stopPropagation()">
+            <span class="modal-close" onclick="closeModal()">&times;</span>
+            <div class="modal-image" id="modalImage">☀️</div>
+            <div class="modal-content">
+                <span class="modal-week" id="modalWeek">VK21</span>
+                <div class="modal-title" id="modalTitle">Otsikko</div>
+
+                <div class="modal-section">
+                    <div class="modal-label">📍 Sijainti</div>
+                    <div class="modal-text" id="modalLocation">Paikka</div>
+                    <a class="modal-map" id="modalMapLink" href="#" target="_blank">Näytä kartassa</a>
+                </div>
+
+                <div class="modal-tip" id="modalTip">
+                    Vinkki tähän...
+                </div>
+
+                <div class="modal-recommender" id="modalRecommenderSection">
+                    <div class="modal-label" style="color: white;">Suosittelee</div>
+                    <div class="modal-recommender-name" id="modalRecommender">Nimi</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ÄÄNI-NAPPI -->
+    <button class="audio-btn" onclick="toggleSound()" title="Ääni päälle/pois">🔊</button>
+
+    <script src="script.js"></script>
+</body>
+</html>
