@@ -211,12 +211,15 @@ function createDoor(weekData) {
 
 function handleDoorClick(el) {
     const week = el.dataset.week;
-    const event = calendarEvents[week];
+    const weekNum = parseInt(week.replace("VK", ""));
 
-    // Tarkista onko ovi lukittu
-    if (el.classList.contains('locked')) {
+    // VK23 ja myöhemmät ovat lukossa
+    if (weekNum > 22) {
+        console.log("Lukossa: " + week);
         return;
     }
+
+    const event = calendarEvents[week];
 
     if (!event || !event.title) {
         alert("Ei vielä sisältöä tälle viikolle!");
